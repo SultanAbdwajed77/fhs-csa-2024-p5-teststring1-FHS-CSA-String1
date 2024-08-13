@@ -37,7 +37,7 @@ public class String1
      *  helloName("X") → "Hello X!"
      */
     public String helloName(String name) {
-        return unimplemented;
+        return "Hello " + name + "!";//unimplemented;
     }
 
     /*
