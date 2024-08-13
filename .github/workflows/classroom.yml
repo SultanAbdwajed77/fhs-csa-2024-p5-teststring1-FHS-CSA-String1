@@ -13,11 +13,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: String1Test
-      id: string1test
+    - name: TestString1
+      id: teststring1
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: String1Test
+        test-name: TestString1
         setup-command: ''
         command: gradle test
         timeout: 10
@@ -25,6 +25,6 @@ jobs:
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        STRING1TEST_RESULTS: "${{steps.string1test.outputs.result}}"
+        TESTSTRING1_RESULTS: "${{steps.teststring1.outputs.result}}"
       with:
-        runners: string1test
+        runners: teststring1
