@@ -13,14 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: helloNameTest
-      id: hellonametest
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: helloNameTest
-        setup-command: ''
-        command: gradle test
-        timeout: 10
     - name: String1Test
       id: string1test
       uses: classroom-resources/autograding-command-grader@v1
@@ -29,10 +21,10 @@ jobs:
         setup-command: ''
         command: gradle test
         timeout: 10
+        max-score: 100
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        HELLONAMETEST_RESULTS: "${{steps.hellonametest.outputs.result}}"
         STRING1TEST_RESULTS: "${{steps.string1test.outputs.result}}"
       with:
-        runners: hellonametest,string1test
+        runners: string1test
