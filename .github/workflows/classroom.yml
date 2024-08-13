@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: TestString1
         setup-command: ''
-        command: gradle test --tests TestString1
+        command: gradle test --tests helloNameTest
         timeout: 10
         max-score: 100
     - name: Autograding Reporter
