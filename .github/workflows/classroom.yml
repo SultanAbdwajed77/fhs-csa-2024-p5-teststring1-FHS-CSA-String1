@@ -31,13 +31,13 @@ jobs:
         command: gradle test --tests TestString1.makeAbbaTest
         timeout: 10
         max-score: 2
-    - name: makeOutWordTest
-      id: makeoutwordtest
+    - name: makeTagsTest
+      id: maketagstest
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: makeOutWordTest
+        test-name: makeTagsTest
         setup-command: ''
-        command: gradle test --tests TestString1.makeOutWordTest
+        command: gradle test --tests TestString1.makeTagsTest
         timeout: 10
         max-score: 2
     - name: makeOutWordTest
@@ -171,6 +171,7 @@ jobs:
       env:
         HELLONAMETEST_RESULTS: "${{steps.hellonametest.outputs.result}}"
         MAKEABBATEST_RESULTS: "${{steps.makeabbatest.outputs.result}}"
+        MAKETAGSTEST_RESULTS: "${{steps.maketagstest.outputs.result}}"
         MAKEOUTWORDTEST_RESULTS: "${{steps.makeoutwordtest.outputs.result}}"
         EXTRAENDTEST_RESULTS: "${{steps.extraendtest.outputs.result}}"
         FIRSTTWOTEST_RESULTS: "${{steps.firsttwotest.outputs.result}}"
@@ -186,4 +187,4 @@ jobs:
         WITHOUTXTEST_RESULTS: "${{steps.withoutxtest.outputs.result}}"
         DEFRONTTEST_RESULTS: "${{steps.defronttest.outputs.result}}"
       with:
-        runners: hellonametest,makeabbatest,makeoutwordtest,makeoutwordtest,extraendtest,firsttwotest,firsthalftest,withoutendtest,combostringtest,middlethreetest,extrafronttest,left2test,hasbadtest,concattest,mincattest,withoutxtest,defronttest
+        runners: hellonametest,makeabbatest,maketagstest,makeoutwordtest,extraendtest,firsttwotest,firsthalftest,withoutendtest,combostringtest,middlethreetest,extrafronttest,left2test,hasbadtest,concattest,mincattest,withoutxtest,defronttest
