@@ -13,18 +13,28 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: TestString1
-      id: teststring1
+    - name: helloNameTest
+      id: hellonametest
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: TestString1
+        test-name: helloNameTest
         setup-command: ''
-        command: gradle test
+        command: gradle test --tests TestString1.helloNameTest
         timeout: 10
-        max-score: 100
+        max-score: 2
+    - name: makeAbbaTest
+      id: makeabbatest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: makeAbbaTest
+        setup-command: ''
+        command: gradle test --tests TestString1.makeAbbaTest
+        timeout: 10
+        max-score: 2
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTSTRING1_RESULTS: "${{steps.teststring1.outputs.result}}"
+        HELLONAMETEST_RESULTS: "${{steps.hellonametest.outputs.result}}"
+        MAKEABBATEST_RESULTS: "${{steps.makeabbatest.outputs.result}}"
       with:
-        runners: teststring1
+        runners: hellonametest,makeabbatest
