@@ -31,10 +31,159 @@ jobs:
         command: gradle test --tests TestString1.makeAbbaTest
         timeout: 10
         max-score: 2
+    - name: makeOutWordTest
+      id: makeoutwordtest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: makeOutWordTest
+        setup-command: ''
+        command: gradle test --tests TestString1.makeOutWordTest
+        timeout: 10
+        max-score: 2
+    - name: makeOutWordTest
+      id: makeoutwordtest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: makeOutWordTest
+        setup-command: ''
+        command: gradle test --tests TestString1.makeOutWordTest
+        timeout: 10
+        max-score: 2
+    - name: extraEndTest
+      id: extraendtest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: extraEndTest
+        setup-command: ''
+        command: gradle test --test TestString1.extraEndTest
+        timeout: 10
+        max-score: 2
+    - name: firstTwoTest
+      id: firsttwotest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: firstTwoTest
+        setup-command: ''
+        command: gradle test --tests TestString1.firstTwoTest
+        timeout: 10
+        max-score: 2
+    - name: firstHalfTest
+      id: firsthalftest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: firstHalfTest
+        setup-command: ''
+        command: gradle test --tests TestString1.firstHalfTest
+        timeout: 10
+        max-score: 2
+    - name: withoutEndTest
+      id: withoutendtest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: withoutEndTest
+        setup-command: ''
+        command: gradle test --tests TestString1.withoutEndTest
+        timeout: 10
+        max-score: 2
+    - name: comboStringTest
+      id: combostringtest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: comboStringTest
+        setup-command: ''
+        command: gradle test --tests TestString1.comboStringTest
+        timeout: 10
+        max-score: 2
+    - name: middleThreeTest
+      id: middlethreetest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: middleThreeTest
+        setup-command: ''
+        command: gradle test --tests TestString1.middleThreeTest
+        timeout: 10
+        max-score: 2
+    - name: extraFrontTest
+      id: extrafronttest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: extraFrontTest
+        setup-command: ''
+        command: gradle test --tests TestString1.extraFrontTest
+        timeout: 10
+        max-score: 2
+    - name: left2Test
+      id: left2test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: left2Test
+        setup-command: ''
+        command: gradle test --tests TestString1.left2Test
+        timeout: 10
+        max-score: 2
+    - name: hasBadTest
+      id: hasbadtest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: hasBadTest
+        setup-command: ''
+        command: gradle test --tests TestString1.hasBadTest
+        timeout: 10
+        max-score: 2
+    - name: conCatTest
+      id: concattest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: conCatTest
+        setup-command: ''
+        command: gradle test --tests TestString1.conCatTest
+        timeout: 10
+        max-score: 2
+    - name: minCatTest
+      id: mincattest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: minCatTest
+        setup-command: ''
+        command: gradle test --tests TestString1.minCatTest
+        timeout: 10
+        max-score: 2
+    - name: withoutXTest
+      id: withoutxtest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: withoutXTest
+        setup-command: ''
+        command: gradle test --tests TestString1.withoutXTest
+        timeout: 10
+        max-score: 2
+    - name: deFrontTest
+      id: defronttest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: deFrontTest
+        setup-command: ''
+        command: gradle test --tests TestString1.deFrontTest
+        timeout: 10
+        max-score: 2
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         HELLONAMETEST_RESULTS: "${{steps.hellonametest.outputs.result}}"
         MAKEABBATEST_RESULTS: "${{steps.makeabbatest.outputs.result}}"
+        MAKEOUTWORDTEST_RESULTS: "${{steps.makeoutwordtest.outputs.result}}"
+        EXTRAENDTEST_RESULTS: "${{steps.extraendtest.outputs.result}}"
+        FIRSTTWOTEST_RESULTS: "${{steps.firsttwotest.outputs.result}}"
+        FIRSTHALFTEST_RESULTS: "${{steps.firsthalftest.outputs.result}}"
+        WITHOUTENDTEST_RESULTS: "${{steps.withoutendtest.outputs.result}}"
+        COMBOSTRINGTEST_RESULTS: "${{steps.combostringtest.outputs.result}}"
+        MIDDLETHREETEST_RESULTS: "${{steps.middlethreetest.outputs.result}}"
+        EXTRAFRONTTEST_RESULTS: "${{steps.extrafronttest.outputs.result}}"
+        LEFT2TEST_RESULTS: "${{steps.left2test.outputs.result}}"
+        HASBADTEST_RESULTS: "${{steps.hasbadtest.outputs.result}}"
+        CONCATTEST_RESULTS: "${{steps.concattest.outputs.result}}"
+        MINCATTEST_RESULTS: "${{steps.mincattest.outputs.result}}"
+        WITHOUTXTEST_RESULTS: "${{steps.withoutxtest.outputs.result}}"
+        DEFRONTTEST_RESULTS: "${{steps.defronttest.outputs.result}}"
       with:
-        runners: hellonametest,makeabbatest
+        runners: hellonametest,makeabbatest,makeoutwordtest,makeoutwordtest,extraendtest,firsttwotest,firsthalftest,withoutendtest,combostringtest,middlethreetest,extrafronttest,left2test,hasbadtest,concattest,mincattest,withoutxtest,defronttest
