@@ -1,17 +1,15 @@
-# Program ___
+# String1
 
 ## Program Description:  
-- Find the ____
-- Choose variable names which are meaningful for this problem, like Area, Width, etc.
+- Implement each method as described above
+- Use the TestString1 file to check your work
+- On submission github will auto grade your completed code
+  - Each method is worth 2 points
+  - Total of 34 points
+- I recommend submitting when finished with each method just in case
 
-### Statements Required: 
-- System.out
-- Variable Assignment
-- ...
+## Statements Required: 
+- See methods for requirements
 
-### Sample Output:
->Some
->
->Out
->
->Put
+## Sample Output:
+- See methods for samples
